@@ -3,9 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { AuthProvider } from ".";
+import { getCurrentUser } from "@/hooks";
+import { ISessionInterface } from "@/utils";
 
-const Navbar = () => {
-  const session = false;
+const Navbar = async () => {
+  const session: ISessionInterface = await getCurrentUser();
+  console.log("============", session?.user);
   return (
     <div className="flexBetween navbar">
       <div className="flexStart flex-1 gap-10">
@@ -22,7 +25,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flexCenter gap-4">
-        {session ? (
+        {session && session.user ? (
           <>
             <p>userphoto</p>
             <Link href="/create-project">Share work</Link>
