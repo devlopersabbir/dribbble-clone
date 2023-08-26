@@ -1,1 +1,1 @@
-export type { NavLinks, categoryFilters, footerLinks } from "./__data";
+export { NavLinks, categoryFilters, footerLinks } from "./__data";
