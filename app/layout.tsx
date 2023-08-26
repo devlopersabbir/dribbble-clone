@@ -1,8 +1,16 @@
+import "globals.css";
 import { Footer, Navbar } from "@/components";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Dribbble Clone - ST SABBIR",
   description: "Dribbble Clone",
+  authors: [
+    {
+      name: "Sabbir Hossain Shuvo",
+      url: "https://github.com/devlopersabbir",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -14,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
