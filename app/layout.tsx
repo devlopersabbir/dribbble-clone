@@ -1,3 +1,5 @@
+import { Footer, Navbar } from "@/components";
+
 export const metadata = {
   title: "Dribbble Clone - ST SABBIR",
   description: "Dribbble Clone",
@@ -10,7 +12,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
