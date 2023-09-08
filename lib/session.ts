@@ -4,6 +4,7 @@ import { AdapterUser } from "next-auth/adapters";
 import GithubProvider from "next-auth/providers/github";
 import jsonwebtoken from "jsonwebtoken";
 import { JWT } from "next-auth/jwt";
+import { getUser } from ".";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -26,8 +27,9 @@ export const authOptions: NextAuthOptions = {
     },
     async signIn({ user }: { user: AdapterUser | User }) {
       try {
-        // get the user if user exits
-        // if they don't exits, create them
+        const isUser = (await getUser(user?.email as string)) as {
+          user?: any;
+        };
         return true;
       } catch (error: any) {
         console.log(error);
