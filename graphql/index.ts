@@ -1,0 +1,1 @@
+export { getUserQuery } from "./getUser";
