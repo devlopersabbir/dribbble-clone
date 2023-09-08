@@ -15,7 +15,6 @@ const serverUrl = isProduction
 const client = new GraphQLClient(apiUrl);
 export const makeGraphQLRequest = async (query: string, varibales: {}) => {
   try {
-    // client.request....
     return await client.request(query, varibales);
   } catch (error) {
     throw error;
