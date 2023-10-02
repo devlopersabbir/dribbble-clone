@@ -1,4 +1,4 @@
-import { getUserQuery } from "@/graphql";
+import { createUserMutation, getUserQuery } from "@/graphql";
 import { GraphQLClient } from "graphql-request";
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -35,5 +35,5 @@ export const createUser = (name: string, email: string, avaterurl: string) => {
     },
   };
 
-  return makeGraphQLRequest(getUserQuery, { email });
+  return makeGraphQLRequest(createUserMutation, varibales);
 };
