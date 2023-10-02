@@ -7,4 +7,11 @@ export type TProvider = {
   signinUrlParams?: Record<string, string> | null;
 };
 
-export type TUserProfile = {};
+export type TUserProfile = {
+  name?: string;
+  email?: string;
+  avaterUrl?: string;
+  description?: string;
+  githubUrl?: string;
+  linkedinUrl?: string;
+};

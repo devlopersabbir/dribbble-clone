@@ -2,4 +2,4 @@
 export type { INavLinks, IFooterLinks, ISessionInterface } from "./interfaces";
 
 // types
-export type { TProvider } from "./types";
+export type { TProvider, TUserProfile } from "./types";

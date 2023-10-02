@@ -25,3 +25,15 @@ export const makeGraphQLRequest = async (query: string, varibales: {}) => {
 export const getUser = (email: string) => {
   return makeGraphQLRequest(getUserQuery, { email });
 };
+
+export const createUser = (name: string, email: string, avaterurl: string) => {
+  const varibales = {
+    input: {
+      name,
+      email,
+      avaterurl,
+    },
+  };
+
+  return makeGraphQLRequest(getUserQuery, { email });
+};
