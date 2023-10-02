@@ -5,6 +5,7 @@ import GithubProvider from "next-auth/providers/github";
 import jsonwebtoken from "jsonwebtoken";
 import { JWT } from "next-auth/jwt";
 import { getUser } from ".";
+import { createUser } from "./actions";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -31,9 +32,13 @@ export const authOptions: NextAuthOptions = {
           user?: any;
         };
         if (!isUser.user) {
-          // await createUser
+          await createUser(
+            user?.name as string,
+            user?.email as string,
+            user?.image as string
+          );
         }
-        return true
+        return true;
       } catch (error: any) {
         console.log(error);
         return false;
