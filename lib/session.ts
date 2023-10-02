@@ -30,7 +30,10 @@ export const authOptions: NextAuthOptions = {
         const isUser = (await getUser(user?.email as string)) as {
           user?: any;
         };
-        return true;
+        if (!isUser.user) {
+          // await createUser
+        }
+        return true
       } catch (error: any) {
         console.log(error);
         return false;

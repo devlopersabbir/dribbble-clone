@@ -6,3 +6,5 @@ export type TProvider = {
   callbackUrl: string;
   signinUrlParams?: Record<string, string> | null;
 };
+
+export type TUserProfile = {};
